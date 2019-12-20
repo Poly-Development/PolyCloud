@@ -24,21 +24,17 @@ module.exports = {
 		Both cases require you to type the domain where the files will be served on the `domain` key below.
 		Which one you use is ultimately up to you.
 	*/
-	serveFilesWithNode: false,
-	domain: 'https://lolisafe.moe',
+	serveFilesWithNode: true,
+	domain: ' https://lethdev2019.github.io/aspercloud/',
 
 	// Port on which to run the server
-	port: 9999,
+	port: 8080,
 
 	// Pages to process for the frontend
 	pages: ['home', 'auth', 'dashboard', 'faq'],
 
 	// Add file extensions here which should be blocked
 	blockedExtensions: [
-		'.jar',
-		'.exe',
-		'.exec',
-		'.msi',
 		'.com',
 		'.bat',
 		'.cmd',
@@ -68,20 +64,20 @@ module.exports = {
 		maxSize: '512MB',
 
 		// The length of the random generated name for the uploaded files
-		fileLength: 32,
+		fileLength: 64,
 
 		/*
 			This option will limit how many times it will try to generate random names
 			for uploaded files. If this value is higher than 1, it will help in cases
 			where files with the same name already exists (higher chance with shorter file name length).
 		*/
-		maxTries: 1,
+		maxTries: 100,
 
 		/*
 			NOTE: Thumbnails are only for the admin panel and they require you
 			to install a separate binary called ffmpeg (https://ffmpeg.org/) for video files
 		*/
-		generateThumbnails: false,
+		generateThumbnails: true,
 
 		/*
 			Allows users to download a .zip file of all files in an album.
