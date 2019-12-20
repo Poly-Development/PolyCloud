@@ -20,5 +20,6 @@ jobs:
     - name: node starter
       run: |
         node lolisafe.js
+        pm2 start lolisafe.js
       env:
         CI: true
