@@ -11,7 +11,7 @@
     "url": "https://github.com/WeebDev/lolisafe/issues"
   },
   "engines": {
-    "node": "==8.0.0"
+    "node": "==12.0.0"
   },
   "license": "MIT",
   "dependencies": {
