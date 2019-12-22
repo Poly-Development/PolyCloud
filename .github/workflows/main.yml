@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses- name: Heroku Review App Deployment Status
+    - name: Heroku Review App Deployment Status
       uses: niteoweb/reviewapps-deploy-status@v1.2.0
       with:
         # Comma separated list of checks to perform.
