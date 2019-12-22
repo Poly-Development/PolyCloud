@@ -10,9 +10,6 @@
   "bugs": {
     "url": "https://github.com/WeebDev/lolisafe/issues"
   },
-  "engines": {
-    "node": ">=7.0.0"
-  },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^3.0.4",
