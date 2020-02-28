@@ -55,4 +55,7 @@ for (let page of config.pages) {
 safe.use((req, res, next) => res.status(404).sendFile('404.html', { root: './pages/error/' }));
 safe.use((req, res, next) => res.status(500).sendFile('500.html', { root: './pages/error/' }));
 
-safe.listen(config.port, () => console.log(`lolisafe started on port ${config.port}`));
+const port = process.env.PORT || 8080;
+safe.listen(port, () => {
+  console.log('Express server listening on port', port)
+});
