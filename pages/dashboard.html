@@ -66,34 +66,111 @@
 				<h1 class="title">Dashboard</h1>
 				<h2 class="subtitle">A simple <strong>dashboard</strong>, to sort your uploaded stuff</h2>
 				<hr>
-				<div class="columns">
-					<div class="column is-3">
-						<aside class="menu" id="menu">
-							<p class="menu-label">General</p>
-							<ul class="menu-list">
-								<li><a href="/">Frontpage</a></li>
-								<li><a id="itemUploads" onclick="panel.getUploads()">Uploads</a></li>
-							</ul>
-							<p class="menu-label">Albums</p>
-							<ul class="menu-list">
-								<li><a id="itemManageGallery" onclick="panel.getAlbums()">Manage your albums</a></li>
-								<li>
-									<ul id='albumsContainer'></ul>
-								</li>
-							</ul>
-							<p class="menu-label">Administration</p>
-							<ul class="menu-list">
-								<li><a id="itemTokens" onclick="panel.changeToken()">Change your token</a></li>
-								<li><a id="itemPassword" onclick="panel.changePassword()">Change your password</a></li>
-								<li><a id="itemLogout"onclick="panel.logout()">Logout</a></li>
-							</ul>
-						</aside>
-					</div>
-					<div class="column has-text-centered" id='page'>
-						<img src="/images/logo.png">
-					</div>
-				</div>
-			</div>
+				
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
+<nav class="navbar ">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="http://bulma.io">
+      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    </a>
+
+    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <span class="icon" style="color: #333;">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+
+    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <span class="icon" style="color: #55acee;">
+        <i class="fa fa-twitter"></i>
+      </span>
+    </a>
+
+    <div class="navbar-burger burger" data-target="navMenubd-example">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navMenubd-example" class="navbar-menu">
+    <div class="navbar-start">
+	<a class="navbar-item " href="/">
+        Upload
+    </a>
+	<a class="navbar-item " onclick="panel.getAlbums()">
+        Files
+    </a>
+	<div class="navbar-item has-dropdown is-hoverable is-mega">
+      <a class="navbar-item " onclick="panel.getAlbums()">
+        Manage your albums
+      </a>
+	<div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
+          <div class="container is-fluid">
+            <div class="columns">
+              <div class="column">
+				<ul id='albumsContainer'></ul>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+	<div class="navbar-item has-dropdown is-hoverable is-mega">
+      <a class="navbar-item " onclick="panel.getAlbums()">
+        Account
+      </a>
+	<div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
+          <div class="container is-fluid">
+            <div class="columns">
+              <div class="column">
+				<a class="navbar-item " onclick="panel.changeToken()">
+        		  Change your Access Token
+    			</a>
+				<a class="navbar-item " onclick="panel.changePassword()">
+       	    	  Change your Password
+    			</a>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+      <a class="navbar-item " onclick="panel.logout()">
+        Sign Out
+      </a>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 
 		</section>
 	</body>
