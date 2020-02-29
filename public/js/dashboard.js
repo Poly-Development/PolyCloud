@@ -19,20 +19,6 @@ panel.verifyToken = function(token, reloadOnError){
 	})
 	.then(function (response) {
 
-		if(response.data.success === false){
-			swal({
-				title: "An error ocurred", 
-				text: response.data.description, 
-				type: "error"
-			}, function(){
-				if(reloadOnError){
-					localStorage.removeItem("token");
-					location.location = '/auth';
-				}
-			});
-			return;
-		}
-
 		axios.defaults.headers.common['token'] = token;
 		localStorage.token = token;
 		panel.token = token;
