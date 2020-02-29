@@ -194,7 +194,6 @@ panel.getUploads = function(album = undefined, page = undefined){
 		}
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
@@ -233,7 +232,6 @@ panel.deleteFile = function(id){
 
 			})
 			.catch(function (error) {
-				return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 				console.log(error);
 			});
 
@@ -312,7 +310,6 @@ panel.getAlbums = function(){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
@@ -344,7 +341,6 @@ panel.renameAlbum = function(id){
 			if(response.data.success === false){
 				if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
 				else if(response.data.description === 'Name already in use') swal.showInputError("That name is already in use!");
-				else swal("An error ocurred", response.data.description, "error");
 				return;
 			}
 
@@ -354,7 +350,6 @@ panel.renameAlbum = function(id){
 
 		})
 		.catch(function (error) {
-			return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 			console.log(error);
 		});
 		
@@ -390,7 +385,6 @@ panel.deleteAlbum = function(id){
 
 			})
 			.catch(function (error) {
-				return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 				console.log(error);
 			});
 
