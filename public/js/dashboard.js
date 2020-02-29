@@ -74,7 +74,6 @@ panel.getUploads = function(album = undefined, page = undefined){
 	axios.get(url).then(function (response) {
 		if(response.data.success === false){
 			if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
-			else return swal("An error ocurred", response.data.description, "error");		
 		}
 		
 		var prevPage = 0;
@@ -244,7 +243,6 @@ panel.getAlbums = function(){
 	axios.get('/api/albums').then(function (response) {
 		if(response.data.success === false){
 			if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
-			else return swal("An error ocurred", response.data.description, "error");		
 		}
 
 		panel.page.innerHTML = '';
@@ -376,7 +374,6 @@ panel.deleteAlbum = function(id){
 
 				if(response.data.success === false){
 					if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
-					else return swal("An error ocurred", response.data.description, "error");		
 				}
 
 				swal("Deleted!", "Your album has been deleted.", "success");
@@ -402,7 +399,6 @@ panel.submitAlbum = function(){
 
 		if(response.data.success === false){
 			if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
-			else return swal("An error ocurred", response.data.description, "error");		
 		}
 
 		swal("Woohoo!", "Album was added successfully", "success");
@@ -411,7 +407,6 @@ panel.submitAlbum = function(){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
