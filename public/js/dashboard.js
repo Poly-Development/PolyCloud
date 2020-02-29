@@ -27,7 +27,6 @@ panel.verifyToken = function(token, reloadOnError){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
