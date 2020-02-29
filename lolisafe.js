@@ -10,6 +10,15 @@ const fs = require('fs');
 const exphbs = require('express-handlebars');
 const safe = express();
 
+safe.use (function (req, res, next) {
+        if (req.secure) {
+                // request was via https, so do no special handling
+                next();
+        } else {
+                // request was via http, so redirect to https
+                res.redirect('https://' + req.headers.host + req.url);
+        }
+});
 require('./database/db.js')(db);
 
 fs.existsSync('./pages/custom' ) || fs.mkdirSync('./pages/custom');
