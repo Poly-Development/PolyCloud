@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		<img src="/images/loader.gif"></img>
 	</div>
 	<script>
- 		setTimeout(function(){
-      		panel.getUploads()
-    		}, 2000);
+ 		object.onload = function(){
+			panel.getUploads();
+		};
   	</script>
 
 		</section>
