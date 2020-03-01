@@ -25,7 +25,7 @@ module.exports = {
 		Which one you use is ultimately up to you.
 	*/
 	serveFilesWithNode: true,
-	domain: ' https://lethdev2019.github.io/aspercloud/',
+	domain: 'https://polycloud.herokuapp.com/',
 
 	// Port on which to run the server
 	port: 8080,
@@ -35,13 +35,6 @@ module.exports = {
 
 	// Add file extensions here which should be blocked
 	blockedExtensions: [
-		'.com',
-		'.bat',
-		'.cmd',
-		'.nt',
-		'.scr',
-		'.ps1',
-		'.psm1',
 		'.sh',
 		'.bash',
 		'.bsh',
