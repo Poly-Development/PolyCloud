@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="https://use.fontawesome.com/cd26baa9bd.js"></script>
 		<script type="text/javascript" src="/js/dashboard.js"></script>
 	</head>
-	<body onload='panel.getUploads()'>
+	<body>
 
 		<section id='auth' class="hero is-light is-fullheight">
 
@@ -123,7 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	<div class="column has-text-centered" id='page'>
 		<img src="/images/loader.gif"></img>
 	</div>
-
+	<script>
+ 		setTimeout(function(){
+      		panel.getUploads()
+    		}, 2000);
+  	</script>
 
 		</section>
 	</body></html>
