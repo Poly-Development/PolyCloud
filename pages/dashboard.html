@@ -123,7 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	<div class="column has-text-centered" id='page'>
 		<img src="/images/loader.gif"></img>
 	</div>
-	<script>
+	<script type="text/javascript">
+  		$(window).bind("load", function () {
+    			panel.getUploads();
+ 	 	});
+</script>
  		window.onload = panel.getUploads()
   	</script>
 
