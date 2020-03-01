@@ -588,7 +588,7 @@ function sleep(ms) {
 }
 
 window.onload = function () {
-	await panel.preparePage();
-	await sleep(50)
+	panel.preparePage();
+	sleep(50)
 	panel.getUploads();
 };
