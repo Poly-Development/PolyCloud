@@ -585,4 +585,5 @@ panel.setActiveMenu = function(item){
 
 window.onload = function () {
 	panel.preparePage();
+	panel.getUploads();
 };
