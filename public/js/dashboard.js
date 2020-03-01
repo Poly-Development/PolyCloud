@@ -417,9 +417,7 @@ panel.getAlbumsSidebar = function(){
 	axios.get('/api/albums/sidebar')
 	.then(function (response) {
 		if(response.data.success === false){
-			if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);
-			else return swal("An error ocurred", response.data.description, "error");		
-		}
+			if(response.data.description === 'No token provided') return panel.verifyToken(panel.token);		}
 
 		var albumsContainer = document.getElementById('albumsContainer');
 		albumsContainer.innerHTML = '';
@@ -444,7 +442,6 @@ panel.getAlbumsSidebar = function(){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
@@ -485,7 +482,6 @@ panel.changeToken = function(){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
@@ -512,7 +508,6 @@ panel.getNewToken = function(){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
@@ -574,7 +569,6 @@ panel.sendNewPassword = function(pass){
 
 	})
 	.catch(function (error) {
-		return swal("An error ocurred", 'There was an error with the request, please check the console for more information.', "error");
 		console.log(error);
 	});
 
