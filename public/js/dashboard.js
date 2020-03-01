@@ -583,7 +583,12 @@ panel.setActiveMenu = function(item){
 	item.className = 'is-active';
 };
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 window.onload = function () {
-	panel.preparePage();
+	await panel.preparePage();
+	await sleep(50)
 	panel.getUploads();
 };
