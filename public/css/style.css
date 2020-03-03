@@ -24,10 +24,10 @@ section#home #b {
 }
 
 section#home div#dropzone {
-	border: 1px solid #dbdbdb;
-	background-color: #dbdbdb;
-    border-color: #dbdbdb;
-    color: #dbdbdb;
+	border: 1px solid #dedede;
+	background-color: #dedede;
+    border-color: #dedede;
+    color: #000000;
     display: none;
     width: 100%;
     border-radius: 3px;
