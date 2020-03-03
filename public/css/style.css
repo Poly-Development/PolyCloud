@@ -26,8 +26,8 @@ section#home #b {
 section#home div#dropzone {
 	border: 1px solid #dbdbdb;
 	background-color: #dbdbdb;
-    border-color: #ff3860;
-    color: #ff3860;
+    border-color: #dbdbdb;
+    color: #dbdbdb;
     display: none;
     width: 100%;
     border-radius: 3px;
