@@ -1,1 +1,159 @@
+<doctype html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  text-align: left;
+  padding: 20px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf; 
+  transition: 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6f6f6f; 
+}
+</style>
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
+
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://github.com/Lethdev2019/PolyCloud/blob/master/public/images/logo.png?raw=true" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+	  <a class="navbar-item" href="/faq">
+        FAQ
+      </a>
+	  <a class="navbar-item" href="/faq">
+        FAQ
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-info is-light" href="/uploads">
+              <span>Your Cloud</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="hero is-info">
+  <div class="hero-body">
+    <p class="title">
+      Welcome to PolyCloud
+    </p>
+    <p class="subtitle">
+      PolyCloud is a <strong>forever free and infinate</strong> cloud storage with <strong>fast uploads</strong>, all running on heroku.
+    </p>
+  </div>
+</section>
+<section class="hero is-white">
+  <div class="hero-body">
+    <p class="title">
+      Features
+    </p>
+	<table>
+	<tr>
+		<td>
+			<img width='100px' src='images/Fast_access.png'><img>
+		</td>
+		<td>
+	    	<p class="subtitle"> 
+	  			<b>Fast access to the cloud and quick upload times.<b>
+    		</p>
+		</td>
+		</tr>
+	<tr>
+		<td>
+			<img width='100px' src='images/Free.png'><img>
+		</td>
+		<td>
+			<p class="subtitle">
+    			<b>The Service is and forever will be free to all as we hope to combat payments for what we believe to be an essential piece of storage.<b>
+    		</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img width='100px' src='images/easy_login.png'><img>
+		</td>
+		<td>
+			<p class="subtitle">
+    			<b>We provide an easy, self-explanatory login interface.<b>
+    		</p>
+		</td>
+  </div>
+</section>
