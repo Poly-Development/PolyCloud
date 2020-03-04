@@ -54,7 +54,7 @@ for (let page of config.pages) {
 	if (fs.existsSync(`./pages/custom/${page}.html`)) {
 		root = './pages/custom/';
 	}
-	if (page === 'home') {
+	if (page === 'index') {
 		safe.get('/', (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
 	} else {
 		safe.get(`/${page}`, (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
