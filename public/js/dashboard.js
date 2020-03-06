@@ -60,7 +60,7 @@ panel.prepareDashboard = function(){
 
 panel.logout = function(){
 	localStorage.removeItem("token");
-	location.reload('/');
+	location.reload('');
 };
 
 panel.getUploads = function(album = undefined, page = undefined){
