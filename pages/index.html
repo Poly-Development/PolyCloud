@@ -1,40 +1,20 @@
-<doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog - Tailsaw </title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="bulma-divider.min.css">
 
-td, th {
-  text-align: left;
-  padding: 20px;
-}
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #cfcfcf; 
-  transition: 0.3s;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #6f6f6f; 
-}
-</style>
 </head>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-<script>
+<body>
+<script delay>
 document.addEventListener('DOMContentLoaded', function () {
 
   // Get all "navbar-burger" elements
@@ -61,95 +41,125 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 </script>
-
-<nav class="navbar is-transparent">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://github.com/Lethdev2019/PolyCloud/blob/master/public/images/logo.png?raw=true" height="28">
-    </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="/">
-        Home
-      </a>
-	  <a class="navbar-item" href="/faq">
-        FAQ
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-              <span class="icon">
-                <i class="fab fa-twitter"></i>
+  <!-- START NAV -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://github.com/Lethdev2019/PolyCloud/blob/master/public/images/logo.png?raw=true" alt="Logo">
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+          <div class=" navbar-item">
+            <div class="control has-icons-left">
               </span>
-              <span>
-                Tweet
-              </span>
-            </a>
-          </p>
-          <p class="control">
-            <a class="button is-info is-light" href="/auth">
-              <span>Your Cloud</span>
-            </a>
-          </p>
+            </div>
+          </div>
+          <a class="navbar-item is-active">
+            Home
+          </a>
+          <a class="navbar-item">
+            Examples
+          </a>
+          <a class="navbar-item">
+            Features
+          </a>
+        </div>
+    </div>
+  </nav>
+  <!-- END NAV -->
+
+  <!-- Image -->
+  <section class="hero ">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8 is-offset-2">
+            <figure class="image is-16by9">
+              <img src="/images/first-post.png" alt="">
+            </figure>
+          </div>
+        </div>
+
+        <section class="section">
+          <div class="columns">
+            <div class="column is-8 is-offset-2">
+              <div class="content is-medium">
+                <h2 class="subtitle is-4">December 25, 2018</h2>
+                <h1 class="title">PolyCloud OpenAlpha</h1>
+                <p>polycloud is a free opensource cloud storage is based off lolisafe on github.com with almost no thirdparty software and resources. You can access and share files by uploading a single file, by using one of many methods (zip, gzip, mkv, mp3, m4a, etc) as well as by simply dragging-and-dropping folders on it. It offers real-time collaboration for file uploads, no files sent to any cloud storage services, and good support for multiple devices for accessing files. It has strong anti-malware protection, and allows for private cloud storage sharing and password-less sharing between smartphones, tablets and Personal Computers
+				<p>in order to share files:
+ <ol>
+	<li>
+		 copy the link
+	</li>
+ 	<li> 
+		 put the link in a browser
+ 	</li>
+	<li>
+ 		 some files will automatically download, for example zips</p>
+    </li>
+</ol>
+                </p>          
+			  </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="is-divider"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- newsletter -->
+  <section class="section">
+    <div class="columns">
+      <div class="column is-10 is-offset-1">
+        <div class="container has-text-centered is-fluid">
+          <div class="hero is-light">
+            <div class="hero-body">
+              <h2 class="title is-4">Sign up for our newsletter</h1>
+                <div class="column is-6 is-offset-3">
+                  <div class="field has-addons has-addons-centered">
+                    <div class="control is-expanded">
+                      <input class="input " type="text" placeholder="Email address">
+                    </div>
+                    <div class="control">
+                      <a class="button is-info">
+                        Subscribe
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
-<section class="hero is-info">
-  <div class="hero-body">
-    <p class="title">
-      Welcome to PolyCloud
-    </p>
-    <p class="subtitle">
-      PolyCloud is a <strong>forever free and infinate</strong> cloud storage with <strong>fast uploads</strong>, all running on heroku.
-    </p>
-  </div>
-</section>
-<section class="hero is-white">
-  <div class="hero-body">
-    <p class="title">
-      Features
-    </p>
-	<table>
-	<tr>
-		<td>
-			<img width='100px' src='images/Fast_access.png'><img>
-		</td>
-		<td>
-	    	<p class="subtitle"> 
-	  			<b>Fast access to the cloud and quick upload times.<b>
-    		</p>
-		</td>
-		</tr>
-	<tr>
-		<td>
-			<img width='100px' src='images/Free.png'><img>
-		</td>
-		<td>
-			<p class="subtitle">
-    			<b>The Service is and forever will be free to all as we hope to combat payments for what we believe to be an essential piece of storage.<b>
-    		</p>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<img width='100px' src='images/easy_login.png'><img>
-		</td>
-		<td>
-			<p class="subtitle">
-    			<b>We provide an easy, self-explanatory login interface.<b>
-    		</p>
-		</td>
-  </div>
-</section>
+  </section>
+
+  <!-- Articles -->
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma - Blog theme</strong> by <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>. Based on the <a
+          href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
