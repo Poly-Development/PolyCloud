@@ -20,6 +20,10 @@
   background: #6f6f6f; 
 }
 
+#progress::-webkit-progress-value {
+  transition: width 0.5s ease;
+}
+
 section#home #b {
 	-webkit-animation-delay: 0.5s;
 	animation-delay: 0.5s;
