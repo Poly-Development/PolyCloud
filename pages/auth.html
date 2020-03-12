@@ -51,57 +51,28 @@
 		<section id='login' class="hero is-fullheight">
 			<div class="hero-body">
 				<div class="container">
-					<h1 class="title">
-						Dashboard Access
-					</h1>
-					<h2 class="subtitle">
-						Login or register
-					</h2>
-					<div class="columns">
-						<div class="column">
-							<p class="control">
-								<input id='user' class="input" type="text" placeholder="Your username">
-							</p>
-							<p class="control">
-								<input id='pass' class="input" type="password" placeholder="Your password">
-							</p>
-
-							<p class="control has-addons is-pulled-right">
-								<a class="button" id='registerBtn' onclick="page.do('register')">
-									<span>Register</span>
-								</a>
-								<a class="button" id='loginBtn' onclick="page.do('login')">
-									<span>Log in</span>
-								</a>
-							</p>
-
-						</div>
-						<div class="hero-body">
+	<div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-black">Login</h3>
                     <hr class="login-hr">
-                    <p class="subtitle has-text-black">Please login to proceed.</p>
+                    <p class="subtitle has-text-black">To Access your cloud account, please login.</p>
                     <div class="box">
                         <form>
                             <div class="field">
                                 <div class="control">
-                                    <input class="input " type="email" placeholder="Your Email" autofocus="">
+                                    <input id='user' class="input" type="text" placeholder="Your username" autofocus="">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input " type="password" placeholder="Your Password">
+                                    <input id='pass' class="input" type="password" placeholder="Your password">
                                 </div>
                             </div>
-                            <div class="field">
-                                <label class="checkbox">
-                  <input type="checkbox">
-                  Remember me
-                </label>
-                            </div>
-                            <button class="button is-block is-info is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+				<a class="button is-block is-info is-fullwidth" id='registerBtn' onclick="page.do('register')">
+					<span>Sign In</span>
+				</a>
                         </form>
                     </div>
                     <p class="has-text-grey">
