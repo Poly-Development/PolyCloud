@@ -47,7 +47,6 @@
 				background-color: #f5f6f8;
 			}
 		</style>
-<section class="hero is-fullheight">
 	<div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
@@ -55,21 +54,28 @@
                     <hr class="login-hr">
                     <p class="subtitle has-text-black">To Access your cloud account, please login.</p>
                     <div class="box">
+			<p>
                         <form>
                             <div class="field">
+			
                                 <div class="control">
                                     <input id='user' class="input" type="text" placeholder="Your username" autofocus="">
                                 </div>
+				</p>
                             </div>
-
+			</p>
+			<p>
                             <div class="field">
                                 <div class="control">
                                     <input id='pass' class="input" type="password" placeholder="Your password">
                                 </div>
                             </div>
+			</p>
+		    	<p>
 				<a class="button is-block is-info is-fullwidth" id='registerBtn' onclick="page.do('login')">
 					<span>Sign In</span>
 				</a>
+		    </p>
                         </form>
                     </div>
                     <p class="has-text-grey">
@@ -84,7 +90,5 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
 	</body>
 </html>
