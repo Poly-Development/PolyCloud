@@ -32,7 +32,7 @@ module.exports = {
 	port: 8080,
 
 	// Pages to process for the frontend
-	pages: ['index', 'upload', 'auth', 'dashboard', 'faq'],
+	pages: ['index', 'upload', 'login', 'signup', 'dashboard', 'faq'],
 
 	// Add file extensions here which should be blocked
 	blockedExtensions: [
