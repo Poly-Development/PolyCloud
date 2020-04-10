@@ -1,11 +1,11 @@
 {
     "name": "Polycloud Service",
     "short_name": "Polycloud",
-    "theme_color": "#2196f3",
-    "background_color": "#2196f3",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "minimal-ui",
     "Scope": "https://polycloud.herokuapp.com/",
-    "start_url": "/login",
+    "start_url": "https://polycloud.herokuapp.com//login",
     "icons": [
       {
         "src": "images/icons/icon-72x72.png",
