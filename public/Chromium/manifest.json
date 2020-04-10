@@ -4,7 +4,7 @@
     "description": "Weather forecast information",
     "icons": [
       {
-        "src": "/Chromium/logo.png",
+        "src": "https://polycloud.herokuapp.com/Chromium/logo.png",
         "type": "image/png",
         "sizes": "128x128"
       },
