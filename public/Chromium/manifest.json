@@ -9,9 +9,15 @@
         "sizes": "128x128"
       },
     ],
-    "start_url": "/?source=pwa",
+    "start_url": "https://polycloud.herokuapp.com/login",
     "background_color": "#ffffff",
-    "display": "standalone",
-    "scope": "/",
+    "display": "minimal-ui",
+    "scope": [
+        "https://polycloud.herokuapp.com/login",
+        "https://polycloud.herokuapp.com/signup",
+        "https://polycloud.herokuapp.com/dashboard",
+        "https://polycloud.herokuapp.com/upload",
+        "https://polycloud.herokuapp.com/album"
+    ],
     "theme_color": "#ffffff"
   }
