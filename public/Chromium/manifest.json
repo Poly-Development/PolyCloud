@@ -1,6 +1,8 @@
 {
  "name": "PolyCloud Service",
  "description": "A free online cloud storage service created by Poly",
+ "display": "standalone",
+ "background_color": "#fff",
  "version": "1.0.0",
  "manifest_version": 2,
  "icons": {
