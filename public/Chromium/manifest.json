@@ -7,7 +7,7 @@
         "src": "https://polycloud.herokuapp.com/Chromium/logo.png",
         "type": "image/png",
         "sizes": "128x128"
-      },
+      }
     ],
     "start_url": "https://polycloud.herokuapp.com/login",
     "background_color": "#ffffff",
