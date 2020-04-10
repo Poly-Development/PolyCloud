@@ -5,7 +5,7 @@
     "background_color": "#ffffff",
     "display": "minimal-ui",
     "Scope": "https://polycloud.herokuapp.com/",
-    "start_url": "https://polycloud.herokuapp.com//login",
+    "start_url": "https://polycloud.herokuapp.com/login",
     "icons": [
       {
         "src": "images/icons/icon-72x72.png",
