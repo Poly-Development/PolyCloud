@@ -1,35 +1,17 @@
 {
-    // Required
-    "app": {
-      "background": {
-        // Optional
-        "scripts": ["https://polycloud.herokuapp.com/js/dashboard.js", "https://polycloud.herokuapp.com/js/auth.js"]
-      }
-    },
-    "manifest_version": 2,
-    "name": "PolyCloud",
-    "version": "1.00.00",
-  
-    // Recommended
-    "default_locale": "en",
-    "description": "An oline free cloud storge service",
-  
-    // Optional
-    "action_handlers": ["new_note"],
-    "author": "Poly Development",
-    "commands": {...},
-    "current_locale": ...,
-    "event_rules": [{...}],
-    "externally_connectable": {
-      "matches": ["*://*.polycloud.herokuapp.com/*"]
-    },
-    "file_handlers": {...},
-    "file_system_provider_capabilities": {
-      "configurable": true,
-      "multiple_mounts": true,
-      "source": "network"
-    },
-    "offline_enabled": true,
-    "version_name": "Blueberry",
-
+    "short_name": "Polycloud",
+    "name": "Polycloud service",
+    "description": "Weather forecast information",
+    "icons": [
+      {
+        "src": "/Chromium/logo.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#ffffff"
   }
