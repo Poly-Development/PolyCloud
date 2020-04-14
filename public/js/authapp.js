@@ -33,7 +33,7 @@ page.verify = function(){
 	page.token = localStorage.token;
 	if(page.token === undefined) return;
 
-	axios.post('/api/tokens/verify', {
+	axios.post('https://polycloud.herokuapp.com/api/tokens/verify', {
 		token: page.token
 	})
 	.then(function (response) {
