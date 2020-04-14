@@ -8,7 +8,7 @@ upload.album;
 upload.myDropzone;
 
 upload.checkIfPublic = function(){
-	axios.get('polycloud.herokuapp.com/api/check')
+	axios.get('https://polycloud.herokuapp.com/api/check')
 	.then(function (response) {
 		upload.isPrivate= response.data.private;
 		upload.maxFileSize = response.data.maxFileSize;
@@ -30,7 +30,7 @@ upload.verifyToken = function(token, reloadOnError){
 	if(reloadOnError === undefined)
 		reloadOnError = false;
 	
-	axios.post('polycloud.herokuapp.com/api/tokens/verify', {
+	axios.post('https://polycloud.herokuapp.com/api/tokens/verify', {
 		token: token
 	})
 	.then(function (response) {
@@ -70,7 +70,7 @@ upload.prepareUpload = function(){
 			upload.album = select.value;
 		});
 
-		axios.get('polycloud.herokuapp.com/api/albums', { headers: { token: upload.token }})
+		axios.get('https://polycloud.herokuapp.com/api/albums', { headers: { token: upload.token }})
 		.then(function(res) {
 			var albums = res.data.albums;
 			
@@ -118,7 +118,7 @@ upload.prepareDropzone = function(){
 	previewNode.parentNode.removeChild(previewNode);
 
 	var dropzone = new Dropzone('div#dropzone', { 
-		url: 'polycloud.herokuapp.com/api/upload',
+		url: 'https://polycloud.herokuapp.com/api/upload',
 		paramName: 'files[]',
 		maxFilesize: upload.maxFileSize.slice(0, -2),
 		parallelUploads: 2,
