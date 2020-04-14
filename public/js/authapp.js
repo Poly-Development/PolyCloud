@@ -8,9 +8,9 @@ page.do = function(dest){
 	if(user === undefined || user === null || user === '')
 		return swal('Error', 'You need to specify a username', 'error');
 	if(pass === undefined || pass === null || pass === '')
-		return swal('Error', 'You need to specify a username', 'error');
+		return swal('Error', 'You need to specify a Password', 'error');
 
-	axios.post('/api/' + dest, {
+	axios.post('https://polycloud.herokuapp.com/api/' + dest, {
 		username: user,
 		password: pass
 	})
