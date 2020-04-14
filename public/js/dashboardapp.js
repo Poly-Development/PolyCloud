@@ -60,7 +60,7 @@ panel.prepareDashboard = function(){
 
 panel.logout = function(){
 	localStorage.removeItem("token");
-	location.replace('https://polycloud.herokuapp.com/');
+	location.replace('index.html');
 };
 
 panel.getUploads = function(album = undefined, page = undefined){
