@@ -175,7 +175,7 @@ panel.getUploads = function(album = undefined, page = undefined){
 					
 				tr.innerHTML = `
 					<tr>
-						<th><a href="${item.file}" target="_blank">${item.file}</a></th>
+						<th><a href="${item.file}">${item.file}</a></th>
 						<th>${displayAlbumOrUser}</th>
 						<td>${item.date}</td>
 						<td>
@@ -283,7 +283,7 @@ panel.getAlbums = function(){
 					<th>${item.name}</th>
 					<th>${item.files}</th>
 					<td>${item.date}</td>
-					<td><a href="${item.identifier}" target="_blank">Album link</a></td>
+					<td><a href="${item.identifier}">Album link</a></td>
 					<td>
 						<a class="button is-small is-primary is-outlined" title="Edit name" onclick="panel.renameAlbum(${item.id})">
 							<span class="icon is-small">
