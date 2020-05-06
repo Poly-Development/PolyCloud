@@ -27,6 +27,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <style type="text/css">
+      .primarybutton:link,.primarybutton{
+        padding: 5px;
+        border-color: #0078d4;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #0078d4;
+        color: white;
+        font-size: 15px;
+        font-family: 'Lato', sans-serif;
+          -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition:         transform .3s ease-in-out;
+
+      }
+      .primarybutton:hover,.primarybutton:active{
+
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+      }
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
 float:left;
@@ -66,7 +84,7 @@ padding : 50px 0;
     <input id='pass' type="password" class="form-control" placeholder="">
   </div>
   <div class="form-check">
-	  <a class="button float-right" onclick="page.do('login')"><font color='white'>Login</font></a>
+	  <a class="primarybutton float-right" onclick="page.do('login')"><font color='white'>Login</font></a>
   </div>
   
 </form>  
