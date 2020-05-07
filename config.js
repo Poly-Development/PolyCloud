@@ -55,7 +55,7 @@ module.exports = {
 			Max file size allowed. Needs to be in MB
 			Note: When maxSize is greater than 1 MiB, you must set the client_max_body_size to the same as maxSize.
 		*/
-		maxSize: '512MB',
+		maxSize: '2048MB',
 
 		// The length of the random generated name for the uploaded files
 		fileLength: 64,
