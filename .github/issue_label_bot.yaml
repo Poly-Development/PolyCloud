@@ -1,4 +1,5 @@
-label-alias:
-  bug: 'kind/bug'
-  feature_request: 'enhancement'
-  question: 'question'
+# Number of labels to fetch (optional). Defaults to 20
+numLabels: 40
+# These labels will not be used even if the issue contains them
+excludeLabels:
+  - pinned
