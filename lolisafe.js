@@ -9,6 +9,7 @@ const db = require('knex')(config.database);
 const fs = require('fs');
 const exphbs = require('express-handlebars');
 const safe = express();
+require('sqreen');
 
 safe.use (function (req, res, next) {
         if (req.secure) {
