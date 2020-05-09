@@ -8,12 +8,13 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #ffffff; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #cfcfcf; 
+  background: #cfcfcf;
+  border-radius: 5px; 
   transition: 0.3s;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -51,8 +52,7 @@ section#home div#dropzone {
     border-color: #efefef;
     color: #000000;
     display: none;
-    width: 50%;
-    height: height: 13vh;;
+    width: 100%;
     border-radius: 3px;
     box-shadow: none;
     height: 2.5em;
