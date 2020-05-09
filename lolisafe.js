@@ -27,7 +27,6 @@ fs.existsSync('./' + config.uploads.folder) || fs.mkdirSync('./' + config.upload
 fs.existsSync('./' + config.uploads.folder + '/thumbs') || fs.mkdirSync('./' + config.uploads.folder + '/thumbs');
 fs.existsSync('./' + config.uploads.folder + '/zips') || fs.mkdirSync('./' + config.uploads.folder + '/zips')
 
-safe.use(helmet());
 safe.set('trust proxy', 1);
 
 safe.engine('handlebars', exphbs({ defaultLayout: 'main' }));
