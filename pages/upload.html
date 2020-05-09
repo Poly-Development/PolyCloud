@@ -28,12 +28,10 @@
 					<h2 class="subtitle">A <strong>modern</strong> self-hosted file upload service based off lolisafe.</h2>
 
 					<h3 class="subtitle" id="maxFileSize"></h3>
-					<center><div class="columns" id="uploadContainer">
+					<div class="columns">
 						<div class="column is-hidden-mobile"></div>
-						
-						<div class="column">
-							<!-- Center The Button With The <center> tag. -->
-							<a id="loginToUpload" href="/auth" class="button is-info is-light is-loading">Log in to upload.</a>							
+						<div class="column" id="uploadContainer">
+							<a id="loginToUpload" href="/auth" class="button is-info is-light is-loading">Log in to upload.</a>
 							<div class="field" id="albumDiv" style="display: none">
 								<p class="control select-wrapper">
 									<span class="select">
@@ -44,10 +42,8 @@
 								</p>
 							</div>
 						</div>
-						
 						<div class="column is-hidden-mobile"></div>
 					</div>
-					</center>
 
 					<div id="uploads" >
 						<div id="template" class="columns">
