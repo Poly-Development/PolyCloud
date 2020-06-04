@@ -64,6 +64,7 @@ for (let page of config.pages) {
 safe.use((req, res, next) => res.status(404).sendFile('404.html', { root: './pages/error/' }));
 safe.use((req, res, next) => res.status(403).sendFile('500.html', { root: './pages/error/' }));
 safe.use((req, res, next) => res.status(500).sendFile('500.html', { root: './pages/error/' }));
+safe.use((req, res, next) => res.status(600).sendFile('Blocked.html', { root: './pages/error/' }));
 
 const port = process.env.PORT || 8080;
 safe.listen(port, () => {
