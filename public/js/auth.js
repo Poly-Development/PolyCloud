@@ -9,7 +9,9 @@ page.do = function(dest){
 		return swal('Error', 'You need to specify a username', 'error');
 	if(pass === undefined || pass === null || pass === '')
 		return swal('Error', 'You need to specify a username', 'error');
-
+	var button = document.getElementById("submit");
+	button.disabled = true;
+	button.textContent = 'Please Wait...';
 	axios.post('/api/' + dest, {
 		username: user,
 		password: pass
