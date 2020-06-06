@@ -26,7 +26,7 @@ module.exports = {
 		Which one you use is ultimately up to you.
 	*/
 	serveFilesWithNode: true,
-	domain: 'https://polycloud.herokuapp.com/',
+	domain: 'https://polycloud.herokuapp.com',
 
 	// Port on which to run the server
 	port: 8080,
