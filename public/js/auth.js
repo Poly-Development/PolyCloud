@@ -11,7 +11,7 @@ page.do = function(dest){
 		return swal('Error', 'You need to specify a username', 'error');
 	var button = document.getElementById("submit");
 	button.disabled = true;
-	button.textContent = 'Please Wait...';
+	button.innerHTML = '<style>.loading {position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);}</style><body class='loading'><div class="preloader-wrapper medium active"><div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></body>';
 	axios.post('/api/' + dest, {
 		username: user,
 		password: pass
