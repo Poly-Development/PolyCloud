@@ -10,8 +10,6 @@ page.do = function(dest){
 	if(pass === undefined || pass === null || pass === '')
 		return swal('Error', 'You need to specify a username', 'error');
 	var button = document.getElementById("submit");
-	button.disabled = true;
-	button.innerHTML = 'Please Wait...';
 	axios.post('/api/' + dest, {
 		username: user,
 		password: pass
@@ -20,7 +18,8 @@ page.do = function(dest){
 
 		if(response.data.success === false)
 			return swal('Error', response.data.description, 'error');
-		
+		button.disabled = true;
+		button.innerHTML = 'Please Wait...';
 		localStorage.token = response.data.token;
 		window.location = '/dashboard';
 
