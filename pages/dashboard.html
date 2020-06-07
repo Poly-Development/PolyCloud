@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-
-<script type="text/javascript" src="/js/pace.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/loader.css">
 <html>
 	<head>
-                <link rel="icon" href="/images/81288397-7a366e80-905c-11ea-9ddf-bd48e8d10598.png">
+
 		<meta name="description" content="A pomf-like file uploading service that doesn't suck.">
 		<meta name="keywords" content="upload,lolisafe,file,images,hosting">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link rel="manifest" href="/Chromium/manifest.json">
-		<meta name="application-name" content="polycloud">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="https://lolisafe.moe/images/icons/apple-touch-icon.png?v=XBreOJMe24">
+		<link rel="icon" type="image/png" href="https://lolisafe.moe/images/icons/favicon-32x32.png?v=XBreOJMe24" sizes="32x32">
+		<link rel="icon" type="image/png" href="https://lolisafe.moe/images/icons/favicon-16x16.png?v=XBreOJMe24" sizes="16x16">
+		<link rel="manifest" href="https://lolisafe.moe/images/icons/manifest.json?v=XBreOJMe24">
+		<link rel="mask-icon" href="https://lolisafe.moe/images/icons/safari-pinned-tab.svg?v=XBreOJMe24" color="#5bbad5">
+		<link rel="shortcut icon" href="https://lolisafe.moe/images/icons/favicon.ico?v=XBreOJMe24">
+		<meta name="apple-mobile-web-app-title" content="lolisafe">
+		<meta name="application-name" content="lolisafe">
 		<meta name="msapplication-config" content="https://lolisafe.moe/images/icons/browserconfig.xml?v=XBreOJMe24">
 		<meta name="theme-color" content="#ffffff">
 
-		<title>Polycloud</title>
+		<meta property="og:url" content="https://lolisafe.moe" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="lolisafe.moe | A small safe worth protecting." />
+		<meta property="og:description" content="A pomf-like file uploading service that doesn't suck." />
+		<meta property="og:image" content="http://lolisafe.moe/images/logo_square.png" />
+		<meta property="og:image:secure_url" content="https://lolisafe.moe/images/logo_square.png" />
+
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="lolisafe.moe | A small safe worth protecting.">
+		<meta name="twitter:description" content="A pomf-like file uploading service that doesn't suck.">
+		<meta name="twitter:image" content="https://lolisafe.moe/files/images/logo_square.png">
+		<meta name="twitter:image:src" content="https://lolisafe.moe/images/logo_square.png">
+
+		<title>lolisafe - A small safe worth protecting.</title>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -23,19 +40,6 @@
 		<script type="text/javascript" src="https://use.fontawesome.com/cd26baa9bd.js"></script>
 		<script type="text/javascript" src="/js/dashboard.js"></script>
 	</head>
-<style>
-html, body {
-   margin:0;
-   padding:0;
-}
-.sqreenBadge {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-}
-.sqreenBadge img {width:100%;}
-</style>
-<a class='sqreenBadge' title="Realtime application protection" href="https://www.sqreen.com/?utm_source=badge"><img style="width:140px;height:auto; padding: 5px;" src="https://s3-eu-west-1.amazonaws.com/sqreen-assets/badges/20171107/sqreen-light-badge.svg" alt="Sqreen | Runtime Application Protection" /></a>
 	<body>
 
 		<section id='auth' class="hero is-light is-fullheight">
@@ -56,93 +60,41 @@ html, body {
 
 		</section>
 
-		<section class="section">
-				
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+		<section id='dashboard' class="section">
 
-  // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+			<div id="panel" class="container">
+				<h1 class="title">Dashboard</h1>
+				<h2 class="subtitle">A simple <strong>dashboard</strong>, to sort your uploaded stuff</h2>
+				<hr>
+				<div class="columns">
+					<div class="column is-3">
+						<aside class="menu" id="menu">
+							<p class="menu-label">General</p>
+							<ul class="menu-list">
+								<li><a href="/">Frontpage</a></li>
+								<li><a id="itemUploads" onclick="panel.getUploads()">Uploads</a></li>
+							</ul>
+							<p class="menu-label">Albums</p>
+							<ul class="menu-list">
+								<li><a id="itemManageGallery" onclick="panel.getAlbums()">Manage your albums</a></li>
+								<li>
+									<ul id='albumsContainer'></ul>
+								</li>
+							</ul>
+							<p class="menu-label">Administration</p>
+							<ul class="menu-list">
+								<li><a id="itemTokens" onclick="panel.changeToken()">Change your token</a></li>
+								<li><a id="itemPassword" onclick="panel.changePassword()">Change your password</a></li>
+								<li><a id="itemLogout"onclick="panel.logout()">Logout</a></li>
+							</ul>
+						</aside>
+					</div>
+					<div class="column has-text-centered" id='page'>
+						<img src="/images/logo.png">
+					</div>
+				</div>
+			</div>
 
-  // Check if there are any nav burgers
-  if ($navbarBurgers.length > 0) {
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
-
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
-    });
-  }
-
-});
-</script>
-<nav class="navbar">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <img src="images/logo.png" alt="Poly Logo" height="28">
-    </a>
-
-    <div class="navbar-burger burger" data-target="navMenubd-example">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div id="navMenubd-example" class="navbar-menu">
-    <div class="navbar-start">
-	<a class="navbar-item " href="/upload">
-        Upload
-    </a>
-	<a class="navbar-item " onclick="panel.getUploads()">
-        Files
-    </a>
-      <a class="navbar-item " onclick="panel.getAlbums()">
-        Manage your albums
-      </a>
-	<div class="navbar-item has-dropdown is-hoverable is-mega">
-      <a class="navbar-item ">
-        Account
-      </a>
-	<div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
-          <div class="container is-fluid">
-            <div class="columns">
-              <div class="column">
-				<a class="navbar-item " onclick="panel.changeToken()">
-        		  Change your Access Token
-    			</a>
-				<a class="navbar-item " onclick="panel.changePassword()">
-       	    	  Change your Password
-    			</a>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-		</div>
-      <a class="navbar-item " onclick="panel.logout()">
-        Sign Out
-      </a>
-    </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-</div>
-	<div class="columns">
-	<div class="column has-text-centered" id='page'>
-		<img src="/images/logo.png"></img>
-	</div>
-	</div>
 		</section>
-	</body> </html>
+	</body>
+</html>
