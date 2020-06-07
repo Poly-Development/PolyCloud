@@ -34,12 +34,6 @@ safe.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 safe.set('view engine', 'handlebars');
 safe.enable('view cache');
 
-safe.use(function (req, res, next) {
-    res.header('Cache-Control', 'public');
-    res.header('Expires', '31536000')
-    next()
-});
-
 let limiter = new RateLimit({ windowMs: 5000, max: 2 });
 safe.use('/api/login/', limiter);
 safe.use('/api/register/', limiter);
