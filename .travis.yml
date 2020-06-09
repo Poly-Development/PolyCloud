@@ -2,16 +2,9 @@ language:
   node_js
 install:
   - npm install -g codecov
+  - npm install nodeunit jscoverage codecov --save-dev
+  
 script:
   - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
-env:
-    global:
-      - CODECOV_TOKEN="464dcdfc-e0ab-4340-9ec7-13d43855fa6f"
-
-    before_install:
-      - chmod +x gradlew
-
-    after_success:
-      - ./gradle jacocoTestReport
-      - bash <(curl -s https://codecov.io/bash)
+  
