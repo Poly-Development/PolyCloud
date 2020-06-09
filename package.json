@@ -5,10 +5,10 @@
   "author": "Pitu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WeebDev/lolisafe"
+    "url": "https://github.com/Poly-Development/PolyCloud"
   },
   "bugs": {
-    "url": "https://github.com/WeebDev/lolisafe/issues"
+    "url": "https://github.com/Poly-Development/PolyCloud/issues"
   },
   "engines": {
     "node": "==10.x"
@@ -47,6 +47,8 @@
     }
   },
   "scripts": {
-      "start": "node lolisafe.js"
+      "test": "nodeunit test",
+      "codecov": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test && codecov"
+      "start": "npm run codecov && node lolisafe.js"
   }
 }
