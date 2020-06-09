@@ -1,4 +1,5 @@
 # PolyCloud
+[![codecov](https://codecov.io/gh/Poly-Development/PolyCloud/branch/master/graph/badge.svg)](https://codecov.io/gh/Poly-Development/PolyCloud)
 ## looking for voluntary contributors
 you can have any of the following sectors:
 * Artwork
