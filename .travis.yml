@@ -14,4 +14,4 @@ env:
 
     after_success:
       - ./gradle jacocoTestReport
-      - bash <(curl -s https://codecov.io/bash) -t <464dcdfc-e0ab-4340-9ec7-13d43855fa6f>
+      - bash <(curl -s https://codecov.io/bash)
