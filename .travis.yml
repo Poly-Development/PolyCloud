@@ -3,8 +3,8 @@ language:
 install:
   - npm install -g codecov
   - npm install nodeunit jscoverage codecov --save-dev
-  
-script:
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
-  - codecov
+ 
+ rvm:
+ - 10
+ - node_js
   
