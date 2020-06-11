@@ -1,5 +1,5 @@
 # PolyCloud
-[![codecov](https://codecov.io/gh/Poly-Development/PolyCloud/branch/master/graph/badge.svg)](https://codecov.io/gh/Poly-Development/PolyCloud)  ![Devpendencies](https://david-dm.org/Poly-Development/PolyCloud.svg)  [![Build Status](https://travis-ci.org/Poly-Development/PolyCloud.svg?branch=master)](https://travis-ci.org/Poly-Development/PolyCloud)
+![Node CI](https://github.com/Poly-Development/PolyCloud/workflows/Node%20CI/badge.svg?branch=master&event=push)
 ## looking for voluntary contributors
 you can have any of the following sectors:
 * Artwork
