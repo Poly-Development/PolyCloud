@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="/js/pace.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/loader.css">
-<link rel="stylesheet" type="text/css" href="https://CDN.lethdev2019.repl.co/Poly.css">
-<link>
 
 <head>
-	<link href="https://CDN.lethdev2019.repl.co/Poly.css" rel="stylesheet" type="text/scss">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="New-Dashboard.lethdev2019.repl.co/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<head>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
 	</script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
@@ -24,20 +27,24 @@
 	<script type="text/javascript" src="https://use.fontawesome.com/cd26baa9bd.js">
 
 	</script>
-	<script type="text/javascript" src="https://polycloud.herokuapp.com/js/auth.js">
+	<script type="text/javascript" src="js/auth.js">
 
 	</script>
 	</script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+
 	</script>
 	<style>
-
 		.sqreenBadge {
-		    position: fixed;
-		    bottom: 0;
-		    right: 0;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			z-index: 100;
 		}
-		.sqreenBadge img {width:100%;}
+
+		.sqreenBadge img {
+			width: 100%;
+		}
 	</style>
 	<a class='sqreenBadge' title="Realtime application protection" href="https://www.sqreen.com/?utm_source=badge"><img style="width:140px;height:auto; padding: 5px;" src="https://s3-eu-west-1.amazonaws.com/sqreen-assets/badges/20171107/sqreen-light-badge.svg" alt="Sqreen | Runtime Application Protection" /></a>
  
@@ -47,30 +54,33 @@
 			height: 100%;
 		}
 
-		body {
- 			background-image: url('https://new-login-page.lethdev2019.repl.co/Background_foggy.webp'); 
-			background-size: cover;
-			background-attachment: fixed;
-		}
-
 		.container {
-			display: inline-block;
+			display:block;
 			background: #fff;
 			border-radius: 4px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
 			width: 400px;
 			border-radius: 5px;
-			padding: 15px;
+			padding: 19px;
 			margin: 0 auto;
-			-ms-transform: translateY(calc(50%));
-			transform: translateY(calc(50%));
 		}
+		center{
+			position: absolute;
+			border-radius: 5px;
+			margin: 0 auto;
+			top: 25%;
+    		transform: translateY(-25%);
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%)
+		}
+
 	</style>
 </head>
 
 <body>
 	<center>
-		<div class="container" id='submit'>
+		<div class="container" id='cont'>
 			<div class="content">
 				<h3>Register</h3>
 				<br>
@@ -83,11 +93,136 @@
                                   </div>
 
 		<br>
-		<p><button id='submit' onclick="page.do('register')" style='width: 100%;' class='primarybutton2'>Register</button></p>
+		<p><button id='submit' onclick="submit()" style='width: 100%;' class='primarybutton2'>Create Account</button></p>
 
-		<p><font size='2'>Already have an account? <a href='/login'>Login</a>.</font></p>
+		<p><font size='2'>Don't have an account? <a href='/login'>Get Started</a>.</font></p>
 		</center>
 		</div>
-	</body>
+	<canvas id='draw'>
+		<script>
+			const TWO_PI = Math.PI * 2;
+const HALF_PI = Math.PI / 2;
+const canvas = document.getElementById("draw");
+const c = canvas.getContext("2d");
+var body = document.body,
+    html = document.documentElement;
 
+var heightvar = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+document.body.appendChild(canvas);
+document.getElementById("draw").style.height = heightvar;
+canvas.width = window.innerWidth;
+canvas.height = heightvar;
+
+class Blob {
+  constructor() {
+    this.wobbleIncrement = 1800;
+    // use this to change the size of the blob
+    this.radius = heightvar *2.25
+    // think of this as detail level
+    // number of conections in the `bezierSkin`
+    this.segments = 7;
+    this.step = HALF_PI / this.segments;
+    this.anchors = [];
+    this.radii = [];
+    this.thetaOff = [];
+
+    const bumpRadius = 210;
+    const halfBumpRadius = bumpRadius / 2;
+
+    for (let i = 0; i < this.segments + 2; i++) {
+      this.anchors.push(0, 0);
+      this.radii.push(Math.random() * bumpRadius - halfBumpRadius);
+      this.thetaOff.push(Math.random() * 2 * Math.PI);
+    }
+
+    this.theta = 0;
+    this.thetaRamp = 0;
+    this.thetaRampDest = 20;
+    this.rampDamp = 50;
+  }
+  update() {
+    this.thetaRamp += (this.thetaRampDest - this.thetaRamp) / this.rampDamp;
+    this.theta += 0.03;
+
+    this.anchors = [0, this.radius];
+    for (let i = 0; i <= this.segments + 2; i++) {
+      const sine = Math.sin(this.thetaOff[i] + this.theta + this.thetaRamp);
+      const rad = this.radius + this.radii[i] * sine;
+      const x = rad * Math.sin(this.step * i);
+      const y = rad * Math.cos(this.step * i);
+      this.anchors.push(x, y);
+    }
+
+    c.save();
+    c.translate(-10, -10);
+    c.scale(0.5, 0.60);
+    c.fillStyle = "#7250d8";
+    c.beginPath();
+    c.moveTo(0, 0);
+    bezierSkin(this.anchors, false);
+    
+    c.lineTo(0, 0);
+    c.fill();
+    c.restore();
+  }
+}
+
+const blob = new Blob();
+
+function loop() {
+  c.clearRect(0, 0, canvas.width, canvas.height);
+  blob.update();
+  window.requestAnimationFrame(loop);
+}
+loop();
+
+// array of xy coords, closed boolean
+function bezierSkin(bez, closed = true) {
+  const avg = calcAvgs(bez);
+  const leng = bez.length;
+
+  if (closed) {
+    c.moveTo(avg[0], avg[1]);
+    for (let i = 2; i < leng; i += 2) {
+      let n = i + 1;
+      c.quadraticCurveTo(bez[i], bez[n], avg[i], avg[n]);
+    }
+    c.quadraticCurveTo(bez[0], bez[1], avg[0], avg[1]);
+  } else {
+    c.moveTo(bez[0], bez[1]);
+    c.lineTo(avg[0], avg[1]);
+    for (let i = 2; i < leng - 2; i += 2) {
+      let n = i + 1;
+      c.quadraticCurveTo(bez[i], bez[n], avg[i], avg[n]);
+    }
+    c.lineTo(bez[leng - 2], bez[leng - 1]);
+  }
+}
+
+// create anchor points by averaging the control points
+function calcAvgs(p) {
+  const avg = [];
+  const leng = p.length;
+  let prev;
+
+  for (let i = 2; i < leng; i++) {
+    prev = i - 2;
+    avg.push((p[prev] + p[i]) / 2);
+  }
+  // close
+  avg.push((p[0] + p[leng - 2]) / 2, (p[1] + p[leng - 1]) / 2);
+  return avg;
+}
+		</script>
+	</canvas>
+</body>
+<script>
+	document.getElementById("cont").style= "animation: 0.2s ease-out 0s 1 slideInFromTop2 forwards;"
+	function submit(){
+		page.do('register')
+		// function here
+	}
+</script>
+</html>
 </html>
