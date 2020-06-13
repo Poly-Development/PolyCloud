@@ -2,40 +2,6 @@
 		HOME
 ------------------ */
 /* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0);
-}
-
-html {
-      overflow-x:hidden;
-      overflow-y:auto;
-	  overflow: overlay;
-	  font-family: lato;
-	  font-size: medium ;
-    }
-
-.body {
-      padding: 2.5%;
-    }
-/* Track */
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(200, 200, 200, 1); 
-  border-radius: 4px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #999999; 
-}
-progress::-webkit-progress-value {
-  transition: width 1s ease;
-}
 .primarybutton2:link,.primarybutton2{
 	padding: 10px;
 	border-color: #6416ff;
@@ -249,3 +215,285 @@ section#dashboard div#table div.column a img { width:200px; }
 	text-align: center;
 	margin-bottom: 10px;
 }
+
+html {
+	overflow-x: hidden;
+	overflow-y: overlay;
+	font-family: Quicksand;
+	font-size: medium;	
+	scroll-behavior: smooth;
+}
+.body {
+	padding: 2.5%;
+}
+.a:visited {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.a {
+	color: #fff;
+	text-decoration: underline;
+}
+nav {
+	background-color: #6416ff;
+}
+h* {
+	font-family: Quicksand;
+}
+.content {
+	padding: 30px;
+}
+.login-container {
+	display: inline-block;
+	background: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 400px;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 0 auto;
+	-ms-transform: translateY(calc(50%));
+	transform: translateY(calc(50%));
+}
+.header {
+	padding: 15%;
+	background: rgb(132, 31, 255);
+	background: linear-gradient(0deg, rgba(132, 31, 255, 1) 0%, #6416ff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#841fff", endColorstr="#9846fc", GradientType=1);
+	height: auto;
+}
+
+.header-error {
+	padding: 15%;
+	background: rgb(132, 31, 255);
+	background: linear-gradient(0deg, rgba(132, 31, 255, 1) 0%, #6416ff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#841fff", endColorstr="#9846fc", GradientType=1);
+	height: 100vh;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+	padding:2px;
+}
+
+
+		@keyframes slideInFromTop {
+			0% {
+				transform: translateY(50%);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0%);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideInFromTopIcon {
+			0% {
+				transform: translateY(10%);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0%);
+				opacity: 1;
+			}
+		}
+		@keyframes exit-ani {
+			0% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0;
+			}
+		}
+
+		@keyframes slideInFromTop2 {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+
+		.enterance {
+			opacity: 0;
+			/* This section calls the slideInFromLeft animation we defined above */
+			animation: 1.3s ease-out 0.5s 1 slideInFromTop forwards;
+		}
+
+		.enterance2 {
+			opacity: 0;
+			/* This section calls the slideInFromLeft animation we defined above */
+			animation: 1.7s ease-out 0.6s 1 slideInFromTop forwards;
+		}
+		.headerenterance {
+			opacity: 0;
+			/* This section calls the slideInFromLeft animation we defined above */
+			animation: 1.3s ease-out 0s 1 slideInFromTop forwards;
+		}
+
+		.iconthing {
+			opacity: 0;
+			/* This section calls the slideInFromLeft animation we defined above */
+			animation: 1.3s ease-out 0.2s 1 slideInFromTopIcon forwards;
+		}
+		.exit {
+			opacity: 0;
+			/* This section calls the slideInFromLeft animation we defined above */
+			animation: 1.3s ease-out 0.2s 1 slideInFromTopIcon forwards;
+		}
+		/* Track */
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: rgba(200, 200, 200, 50);
+			border-radius: 4px;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: #999999;
+		}
+
+
+
+		.primarybutton2:link,
+		.primarybutton2 {
+			padding: 10px;
+			border-color: #6416ff;
+			border-radius: 3px;
+			text-decoration: none;
+			background-color: #6416ff;
+			display: inline-block;
+			color: black;
+			border: none;
+			font-size: 15px;
+			font-family: Quicksand;
+			-webkit-transition: -webkit-transform 1s ease-in-out;
+			transition: transform 1s ease-in-out;
+
+		}
+
+		.primarybutton2:hover {
+			color: white;
+			background-color: #8c53ff;
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.14), 0 2px 7px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.h1 {
+			font-family: Quicksand;
+		}
+
+		.primarybutton2:hover {
+			background-color: #6416ff;
+			border-color: white;
+			color: white;
+			border: none;
+			display: inline-block;
+		}
+
+		.defaultbutton2:link,
+		.defaultbutton2 {
+			padding: 10px;
+			border-color: black;
+			border-radius: 3px;
+			text-decoration: none;
+			background-color: #6416ff;
+			color: white;
+			border: none;
+			font-size: 15px;
+			font-family: Quicksand;
+			display: inline-block;
+			-webkit-transition: -webkit-transform .3s ease-in-out;
+			transition: transform 0.3s ease-in-out;
+
+
+		}
+
+		.defaultbutton2:hover {
+			background-color: #eee;
+			color: black;
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.14), 0 2px 7px 0 rgba(0, 0, 0, 0.19);
+			display: inline-block;
+			border: none;
+		}
+		.defaultbutton2:active,
+		.defaultbutton2 {
+			padding: 10px;
+			border-color:  #6416ff;
+			border-radius: 3px;
+			text-decoration: none;
+			background-color: #6416ff;
+			display: inline-block;
+			color: white;
+			border: none;
+			font-size: 15px;
+			font-family: Quicksand;
+			-webkit-transition: -webkit-transform .3s ease-in-out;
+			transition: 0.3s;
+		}
+		.primarybutton:active,
+		.primarybutton2 {
+			padding: 10px;
+			border-color: #eee;
+			border-radius: 3px;
+			text-decoration: none;
+			background-color: #eee;
+			display: inline-block;
+			color: black;
+			border: none;
+			font-size: 15px;
+			font-family: Quicksand;
+			-webkit-transition: -webkit-transform .3s ease-in-out;
+			transition: 0.3s;
+		}
+
+
+		.primarybutton:disabled {
+			padding: 20px;
+			border-color: #e0e0e0;
+			border-radius: 3px;
+			text-decoration: none;
+			background-color: #e0e0e0;
+			display: inline-block;
+			color: #222222;
+			border: none;
+			font-size: 15px;
+			font-family: Quicksand;
+			-webkit-transition: -webkit-transform .3s ease-in-out;
+			transition: transform .3s ease-in-out;
+
+		}
+
+		.primarybutton:hover:active {
+			background-color: #f1f1f1;
+			box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 3.5px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.h1 {
+			font-family: Quicksand;
+		}
+
+		.primarybutton2:active {
+			background-color: #7b39ff;
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.19);
+		}
+
+		* {
+			outline: none;
+		}
+		.card{
+			border: none;
+			height: 400px;
+			box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 3.5px 0 rgba(0, 0, 0, 0.19);
+			margin:9px;
+		}
