@@ -21,5 +21,5 @@ jobs:
     - name: Readable Readme
       uses: tianhaoz95/readable-readme@v1.0.4-beta
       with:
-        token: WU4tiwfsddhu7ert8at6ztdgyiugeh867dsf5dfcx57g5dfz75fdha4654hbsgzdf68fytg
+        token: ${{ secrets.READABLE }}
 
