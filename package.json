@@ -48,7 +48,7 @@
     }
   },
   "scripts": {
-      "test": "test": "istanbul cover node_modules/jasmine/bin/jasmine.js",
+      "test": "istanbul cover node_modules/jasmine/bin/jasmine.js",
       "codecov": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test && codecov",
       "start": "npx test && export CODACY_PROJECT_TOKEN=${{ secrets.CODE_COVER }} && node lolisafe.js"
   }
