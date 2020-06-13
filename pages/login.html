@@ -127,8 +127,8 @@ class Blob {
     this.radii = [];
     this.thetaOff = [];
 
-    const bumpRadius = 210;
-    const halfBumpRadius = bumpRadius / 2;
+    var bumpRadius = 210;
+    var halfBumpRadius = bumpRadius / 2;
 
     for (let i = 0; i < this.segments + 2; i++) {
       this.anchors.push(0, 0);
@@ -142,9 +142,11 @@ class Blob {
     this.rampDamp = 50;
   }
   update() {
+    this.radius = heightvar *2.25
     this.thetaRamp += (this.thetaRampDest - this.thetaRamp) / this.rampDamp;
     this.theta += 0.03;
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     this.anchors = [0, this.radius];
     for (let i = 0; i <= this.segments + 2; i++) {
       const sine = Math.sin(this.thetaOff[i] + this.theta + this.thetaRamp);
