@@ -144,7 +144,8 @@ class Blob {
   update() {
     this.thetaRamp += (this.thetaRampDest - this.thetaRamp) / this.rampDamp;
     this.theta += 0.03;
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     this.anchors = [0, this.radius];
     for (let i = 0; i <= this.segments + 2; i++) {
       const sine = Math.sin(this.thetaOff[i] + this.theta + this.thetaRamp);
