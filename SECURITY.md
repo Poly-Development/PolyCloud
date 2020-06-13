@@ -9,7 +9,7 @@
 
 ## Reporting a Vulnerability
 
-when reporting a VULNERABILITY or BUG, it is reccommended to format your message as the following or use a template...
+when reporting a VULNERABILITY or BUG, it is recommended that you format your message as the following or use a template...
 ```markdown
 ### screenshots
 ![alt text](image_link_here_as_URL_or_upload_via_drag_&_drop)
