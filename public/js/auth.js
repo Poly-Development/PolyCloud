@@ -18,8 +18,7 @@ page.do = function(dest){
 
 		if(response.data.success === false)
 			return swal('Error', response.data.description, 'error');
-		button.disabled = true;
-		button.innerHTML = 'Please Wait...';
+		document.getElementById("cont").style= "animation: 0.2s ease-in 0s 1 exit-ani forwards;";
 		localStorage.token = response.data.token;
 		window.location = '/dashboard';
 
