@@ -142,6 +142,7 @@ class Blob {
     this.rampDamp = 50;
   }
   update() {
+    this.radius = heightvar *2.25
     this.thetaRamp += (this.thetaRampDest - this.thetaRamp) / this.rampDamp;
     this.theta += 0.03;
     canvas.width = window.innerWidth;
