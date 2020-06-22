@@ -1,19 +1,14 @@
-name: Mark stale issues and pull requests
-
+name: "Close stale issues"
 on:
   schedule:
   - cron: "0 0 * * *"
 
 jobs:
   stale:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/stale@v1
+    - uses: actions/stale@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'This message has been closed due to inactivity'
-        stale-pr-message: 'This message has been closed due to inactivity'
-        stale-issue-label: 'IDLE-for-too-long'
-        stale-pr-label: 'no-pr-activity'
+        stale-issue-message: 'This issue is stale because it has been open 9 days with no activity.'
+        days-before-stale: 9
