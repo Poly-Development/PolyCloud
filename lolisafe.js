@@ -10,6 +10,29 @@ const db = require('knex')(config.database);
 const fs = require('fs');
 const exphbs = require('express-handlebars');
 const safe = express();
+import express from 'express';
+import * as Sentry from '@sentry/node';
+
+Sentry.init({ dsn: 'https://2a64cf30db9a480d9581d51b916da47d@o410886.ingest.sentry.io/5285350' });
+
+// The request handler must be the first middleware on the app
+safe.use(Sentry.Handlers.requestHandler());
+
+// All controllers should live here
+safe.get('/', function rootHandler(req, res) {
+  res.end('Hello world!');
+});
+
+// The error handler must be before any other error middleware and after all controllers
+safe.use(Sentry.Handlers.errorHandler());
+
+// Optional fallthrough error handler
+safe.use(function onError(err, req, res, next) {
+  // The error id is attached to `res.sentry` to be returned
+  // and optionally displayed to the user for support.
+  res.statusCode = 500;
+  res.end(res.sentry + "\n");
+});
 
 safe.use (function (req, res, next) {
         if (req.secure) {
