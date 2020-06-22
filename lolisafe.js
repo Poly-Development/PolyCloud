@@ -10,8 +10,6 @@ const db = require('knex')(config.database);
 const fs = require('fs');
 const exphbs = require('express-handlebars');
 const safe = express();
-import express from 'express';
-import * as Sentry from '@sentry/node';
 
 Sentry.init({ dsn: 'https://2a64cf30db9a480d9581d51b916da47d@o410886.ingest.sentry.io/5285350' });
 
