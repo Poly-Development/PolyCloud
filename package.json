@@ -32,7 +32,7 @@
     "sqreen": "^1.x"
   },
   "devDependencies": {
-    "eslint": "^4.18.2",
+    "eslint": "^7.3.1",
     "eslint-config-aqua": "^1.4.1"
   },
   "eslintConfig": {
@@ -48,8 +48,8 @@
     }
   },
   "scripts": {
-      "test": "istanbul cover node_modules/jasmine/bin/jasmine.js",
-      "codecov": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test && codecov",
-      "start": "node lolisafe.js"
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js",
+    "codecov": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test && codecov",
+    "start": "node lolisafe.js"
   }
 }
