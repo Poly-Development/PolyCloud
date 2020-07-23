@@ -9,8 +9,8 @@ const RateLimit = require('express-rate-limit');
 const db = require('knex')(config.database);
 const fs = require('fs');
 const exphbs = require('express-handlebars');
-const safe = express();
-safe.use (function (req, res, next) {
+const app = express();
+app.use (function (req, res, next) {
         if (req.secure) {
                 // request was via https, so do no special handling
                 next();
@@ -27,26 +27,26 @@ fs.existsSync('./' + config.uploads.folder) || fs.mkdirSync('./' + config.upload
 fs.existsSync('./' + config.uploads.folder + '/thumbs') || fs.mkdirSync('./' + config.uploads.folder + '/thumbs');
 fs.existsSync('./' + config.uploads.folder + '/zips') || fs.mkdirSync('./' + config.uploads.folder + '/zips')
 
-safe.set('trust proxy', 1);
+app.set('trust proxy', 1);
 
-safe.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-safe.set('view engine', 'handlebars');
-safe.enable('view cache');
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+app.enable('view cache');
 
 let limiter = new RateLimit({ windowMs: 5000, max: 2 });
-safe.use('/api/login/', limiter);
-safe.use('/api/register/', limiter);
+app.use('/api/login/', limiter);
+app.use('/api/register/', limiter);
 
-safe.use(bodyParser.urlencoded({ extended: true }));
-safe.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 if (config.serveFilesWithNode) {
 	safe.use('/', express.static(config.uploads.folder));
 }
 
-safe.use('/', express.static('./public'));
-safe.use('/', album);
-safe.use('/api', api);
+app.use('/', express.static('./public'));
+app.use('/', album);
+app.use('/api', api);
 
 for (let page of config.pages) {
 	let root = './pages/';
@@ -54,17 +54,17 @@ for (let page of config.pages) {
 		root = './pages/custom/';
 	}
 	if (page === 'index') {
-		safe.get('/', (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
+		app.get('/', (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
 	} else {
-		safe.get(`/${page}`, (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
+		app.get(`/${page}`, (req, res, next) => res.sendFile(`${page}.html`, { root: root }));
 	}
 }
 
-safe.use((req, res, next) => res.status(404).sendFile('404.html', { root: './pages/error/' }));
-safe.use((req, res, next) => res.status(403).sendFile('403.html', { root: './pages/error/' }));
-safe.use((req, res, next) => res.status(500).sendFile('500.html', { root: './pages/error/' }));
+app.use((req, res, next) => res.status(404).sendFile('404.html', { root: './pages/error/' }));
+app.use((req, res, next) => res.status(403).sendFile('403.html', { root: './pages/error/' }));
+app.use((req, res, next) => res.status(500).sendFile('500.html', { root: './pages/error/' }));
 
 const port = process.env.PORT || 8080;
-safe.listen(port, () => {
+app.listen(port, () => {
   console.log('Express server listening on port', port)
 });
