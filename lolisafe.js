@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 if (config.serveFilesWithNode) {
-	safe.use('/', express.static(config.uploads.folder));
+	app.use('/', express.static(config.uploads.folder));
 }
 
 app.use('/', express.static('./public'));
