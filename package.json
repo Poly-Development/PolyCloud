@@ -15,6 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "newrelic": "*",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.18.2",
     "istanbul": "0.x",
