@@ -1,4 +1,6 @@
 'use strict'
+require('dotenv').config()
+process.env.newrelic
 /**
  * New Relic agent configuration.
  *
