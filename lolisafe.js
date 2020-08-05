@@ -1,5 +1,4 @@
 require('sqreen');
-require('newrelic');
 const config = require('./config.js');
 const api = require('./routes/api.js');
 const album = require('./routes/album.js');
