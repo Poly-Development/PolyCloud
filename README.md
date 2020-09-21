@@ -3,4 +3,4 @@
 ![](https://img.shields.io/website?down_color=red&down_message=Offline&style=flat&up_color=green&up_message=Online&url=https%3A%2F%2Fpolycloud.herokuapp.com) ![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Poly-Development/PolyCloud/latest?color=dark%20green&include_prereleases&sort=semver&style=flat)
 
 ## PolyCloud is no longer the main website
-We have broken off into small little chunks and have one main website now. That is PolyCloud Hub see it here or the [repo on GitHub](#)
+We have broken off into small little chunks and have one main website now. That is PolyCloud Hub see it here or the [repo on GitHub](https://github.com/Poly-OpenDev/PolyCloudHub)
